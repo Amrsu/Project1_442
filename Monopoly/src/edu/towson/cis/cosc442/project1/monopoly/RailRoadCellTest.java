@@ -14,8 +14,8 @@ public class RailRoadCellTest extends TestCase {
 	}
 	
 	public void testPlayerAction() {
-		RailRoadCell cell =
-			(RailRoadCell) gameMaster.getGameBoard().queryCell("Railroad A");
+		IOwnable cell =
+			(IOwnable) gameMaster.getGameBoard().queryCell("Railroad A");
 		int cellIndex = gameMaster.getGameBoard().queryCellIndex("Railroad A");
 		gameMaster.movePlayer(0, cellIndex);
 		gameMaster.getPlayer(0).purchase();
@@ -40,15 +40,15 @@ public class RailRoadCellTest extends TestCase {
 	}
 
 	public void testRent() {
-		RailRoadCell rr1 =
-			(RailRoadCell) gameMaster.getGameBoard().queryCell("Railroad A");
+		IOwnable rr1 =
+			(IOwnable) gameMaster.getGameBoard().queryCell("Railroad A");
 		int cellIndex1 = gameMaster.getGameBoard().queryCellIndex("Railroad A");
 		gameMaster.movePlayer(0, cellIndex1);
 		gameMaster.getPlayer(0).purchase();
 		assertEquals(25, rr1.getRent());
 
-		RailRoadCell rr2 =
-			(RailRoadCell) gameMaster.getGameBoard().queryCell("Railroad B");
+		IOwnable rr2 =
+			(IOwnable) gameMaster.getGameBoard().queryCell("Railroad B");
 		int cellIndex2 = gameMaster.getGameBoard().queryCellIndex("Railroad B");
 		gameMaster.movePlayer(0, cellIndex2 - cellIndex1);
 		gameMaster.getPlayer(0).purchase();

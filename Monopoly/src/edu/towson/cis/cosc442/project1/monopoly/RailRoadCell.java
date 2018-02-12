@@ -1,6 +1,6 @@
 package edu.towson.cis.cosc442.project1.monopoly;
 
-public class RailRoadCell extends Cell {
+public class RailRoadCell extends Cell implements IOwnable {
 	static private int baseRent;
 	static public String COLOR_GROUP = "RAILROAD";
 	static private int price;
@@ -13,14 +13,26 @@ public class RailRoadCell extends Cell {
 		RailRoadCell.price = price;
 	}
 	
+	/* (non-Javadoc)
+	 * @see edu.towson.cis.cosc442.project1.monopoly.IOwnable#getPrice()
+	 */
+	@Override
 	public int getPrice() {
 		return RailRoadCell.price;
 	}
 
+	/* (non-Javadoc)
+	 * @see edu.towson.cis.cosc442.project1.monopoly.IOwnable#getRent()
+	 */
+	@Override
 	public int getRent() {
 		return RailRoadCell.baseRent * (int)Math.pow(2, theOwner.numberOfRR() - 1);
 	}
 	
+	/* (non-Javadoc)
+	 * @see edu.towson.cis.cosc442.project1.monopoly.IOwnable#playAction()
+	 */
+	@Override
 	public void playAction() {
 		Player currentPlayer = null;
 		if(!isAvailable()) {
