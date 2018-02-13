@@ -1,14 +1,34 @@
 package edu.towson.cis.cosc442.project1.monopoly;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class RailRoadCell.
+ */
 public class RailRoadCell extends Cell implements IOwnable {
+	
+	/** The base rent. */
 	static private int baseRent;
+	
+	/** The color group. */
 	static public String COLOR_GROUP = "RAILROAD";
+	
+	/** The price. */
 	static private int price;
 
+	/**
+	 * Sets the base rent.
+	 *
+	 * @param baseRent the new base rent
+	 */
 	public static void setBaseRent(int baseRent) {
 		RailRoadCell.baseRent = baseRent;
 	}
 
+	/**
+	 * Sets the price.
+	 *
+	 * @param price the new price
+	 */
 	public static void setPrice(int price) {
 		RailRoadCell.price = price;
 	}
