@@ -6,6 +6,6 @@ public interface IOwnable {
 
 	int getRent();
 
-	void playAction();
+	boolean playAction(String msg);
 
 }

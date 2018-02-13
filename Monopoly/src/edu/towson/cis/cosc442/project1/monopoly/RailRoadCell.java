@@ -33,7 +33,7 @@ public class RailRoadCell extends Cell implements IOwnable {
 	 * @see edu.towson.cis.cosc442.project1.monopoly.IOwnable#playAction()
 	 */
 	@Override
-	public void playAction() {
+	public boolean playAction(String msg) {
 		Player currentPlayer = null;
 		if(!isAvailable()) {
 			currentPlayer = GameMaster.instance().getCurrentPlayer();
@@ -41,5 +41,6 @@ public class RailRoadCell extends Cell implements IOwnable {
 				currentPlayer.payRentTo(theOwner, getRent());
 			}
 		}
+		return false;
 	}
 }
